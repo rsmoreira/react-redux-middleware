@@ -1,8 +1,7 @@
-> This is a copy of the Stephen Grider repository named ReduxSimpleStarter. 
-> Thanks Stephen.
+> This project was started with a copy of the Stephen Grider repository named ReduxSimpleStarter. 
+> Thanks Stephen. 
 
-# ReduxSimpleStarter
-
+# React Redux - Middleware
 Interested in learning [Redux](https://www.udemy.com/react-redux/)?
 
 ### Getting Started
@@ -13,16 +12,8 @@ There are two methods for getting started with this repo.
 Checkout this repo, install dependencies, then start the gulp process with the following:
 
 ```
-> git clone https://github.com/StephenGrider/ReduxSimpleStarter.git
-> cd ReduxSimpleStarter
-> npm install
-> npm start
-```
-
-#### Not Familiar with Git?
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
-
-```
+> git clone https://github.com/rsmoreira/react-redux-middleware.git
+> cd react-redux-middleware
 > npm install
 > npm start
 ```
