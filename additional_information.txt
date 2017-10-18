@@ -1,0 +1,32 @@
+MIDDLEWARE
+
+	The Middleware is a function that takes an Action and depending on the ActionType or the ActionPayload (or any other factors), the Middleware can choose to let the action to pass through, it can manipulate the action, it can console.log it or it can stop all together. It can do all of this kind of little task before the Action reach the Reducer.
+	Into the REDUX flow, the Middleware is kept between the ActionCreator and the Reducer and it manages the Actions come from the Action Creator before it goes to the Reducer, as we have mentioned before. 
+	Inside the Middleware you can have another flow, before the action goes to the Reducer.
+
+	To use a Middleware, then you will need to install a specific package from NPM. The most used/recently is the REDUX-PROMISE.
+
+	It will help us to handle Ajax requests inside our application. 
+
+	To install it just run, from your terminal, inside your project the following command:
+		
+		$ npm install --save redux-promise
+
+	After installed it must be hooked up inside our application. 
+
+	To do that, into your /src/index.js, you must to import the new package installed and then apply the middleware. 
+
+		...
+		import ReduxPromise from 'redux-promise';
+		...
+		const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
+		...
+
+
+AXIOS
+
+	AXIOS is a library made to make ajax requests from the browser, it works almost identically as jQuery. 
+
+	To install it just run, from your terminal, inside your project the following command:
+
+		$ npm install --sava axios
