@@ -1,12 +1,9 @@
 // This is a container. On React Redux we always use a container 
 // when the component needs to access data from ReactRedux. 
-
 import React, {Component} from 'react';
 // The 'connect' will give us the access to the data into the redux actions
 import { connect } from 'react-redux';
-// Sparklines is the library used to create our charts.
-// The SparklinesLine is a chield package into Sparkedlines used to add a different layout.
-import { Sparklines, SparklinesLine } from 'react-sparklines';
+import Chart from '../components/chart'
 
 class WeatherList extends Component {
     renderWeather(cityData) {
@@ -17,9 +14,7 @@ class WeatherList extends Component {
             <tr key={cityData.city.name}>
                 <td>{cityData.city.name}</td>
                 <td>
-                    <Sparklines height={120} width={180} data={temps}>
-                        <SparklinesLine color="red"/>
-                    </Sparklines>
+                    <Chart data={temps} color="orange" />
                 </td>
 
             </tr>
