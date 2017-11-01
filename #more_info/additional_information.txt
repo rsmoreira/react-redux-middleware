@@ -30,3 +30,21 @@ AXIOS
 	To install it just run, from your terminal, inside your project the following command:
 
 		$ npm install --sava axios
+
+SPARKLINES
+	
+	The Sparklines library will help us to print charts into the front end.
+
+	https://github.com/borisyankov/react-sparklines
+
+	To install: 
+	npm i --save react-sparklines@1.6.0
+	(We will install the version 1.6.0 because the latest version has a bug.)
+
+	To use you just must to import the packages as bellow:
+
+	import { Sparklines, SparklinesLine } from 'react-sparklines';
+
+	Sparklines is the library used to create our charts.
+	The SparklinesLine is a chield package into Sparkedlines used to add a different layout.
+

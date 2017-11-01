@@ -3,11 +3,40 @@
 
 import React, {Component} from 'react';
 // The 'connect' will give us the access to the data into the redux actions
-import { connect } from 'react-redux'
-
+import { connect } from 'react-redux';
+// Sparklines is the library used to create our charts.
+// The SparklinesLine is a chield package into Sparkedlines used to add a different layout.
+import { Sparklines, SparklinesLine } from 'react-sparklines';
 
 class WeatherList extends Component {
+    renderWeather(cityData) {
+
+        const temps = cityData.list.map(weather => weather.main.temp)
+        console.log(temps);
+        return(
+            <tr key={cityData.city.name}>
+                <td>{cityData.city.name}</td>
+                <td>
+                    <Sparklines height={120} width={180} data={temps}>
+                        <SparklinesLine color="red"/>
+                    </Sparklines>
+                </td>
+
+            </tr>
+        );
+    }
+    
+    
     render() {
+
+        // this.props.weather - 
+        // it is the response and contains the data of the weather
+        // of the city that you have made the request.
+        // 
+        // this.props.weather.map - 
+        // here, the 'map' will iterate each content of the list 
+        // (this.props.weather) and will pass this contant to our
+        // function renderWeather. 
         return (
             <table className="table table-hover">
                 <thead>
@@ -19,6 +48,9 @@ class WeatherList extends Component {
                     </tr>
                 </thead>
                 <tbody>
+                    
+                    { this.props.weather.map(this.renderWeather) }
+
                 </tbody>
             </table>
         );
