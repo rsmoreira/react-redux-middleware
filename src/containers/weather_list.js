@@ -4,27 +4,25 @@ import _ from 'lodash';
 import React, {Component} from 'react';
 // The 'connect' will give us the access to the data into the redux actions
 import { connect } from 'react-redux';
-import Chart from '../components/chart'
+import Chart from '../components/chart';
+
+import GoogleMap from '../components/google_map';
 
 class WeatherList extends Component {
     renderWeather(cityData) {
 
-        const temps = _.map(cityData.list.map(weather => weather.main.temp), (temp) => temp - 273)
-        const pressures = cityData.list.map(weather => weather.main.pressure)
-        const humidities = cityData.list.map(weather => weather.main.humidity)
-        
+        const temps = _.map(cityData.list.map(weather => weather.main.temp), (temp) => temp - 273);
+        const pressures = cityData.list.map(weather => weather.main.pressure);
+        const humidities = cityData.list.map(weather => weather.main.humidity);
+        const longitude = cityData.city.coord.lon; 
+        const latitude = cityData.city.coord.lat;
+
         return(
             <tr key={cityData.city.name}>
-                <td>{cityData.city.name}</td>
-                <td>
-                    <Chart data={temps} color="orange" units="C" />
-                </td>
-                <td>
-                    <Chart data={pressures} color="blue" units="hPa" />
-                </td>
-                <td>
-                    <Chart data={humidities} color="green" units="%" />
-                </td>
+                <td><GoogleMap lat={latitude} lon={longitude} /></td>
+                <td><Chart data={temps} color="orange" units="C" /></td>
+                <td><Chart data={pressures} color="blue" units="hPa" /></td>
+                <td><Chart data={humidities} color="green" units="%" /></td>
 
             </tr>
         );
